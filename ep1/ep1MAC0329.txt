@@ -69,5 +69,6 @@ Nomes:				nUSP:
 
 	-Divider:
 
-		Recebe dois numeros inteiros de 8 bits no formato de complemento de 2
-		
+		Recebe dois numeros inteiros de 8 bits no formato de complemento de 2, o dividendo e o divisor. Primeiramente, verifica-se se os numeros sao negativos, em caso afirmativo o numero eh trocado por seu complemento de dois. Entao o divisor eh deslocado ateh que seu bit mais significativo seja 1. Feito isso, o divisor e o dividendo sao encaminhados para a primeira unidade de DividerUnity. As saidas, exceto a saida do resutaldo, dessa primeira DividerUnity sao conectadas com as respectivas entradas da proxima DividerUnity eh repetido ateh a oitava DividerUnity. Os resultados sao encaminhados para um shifter, que ira deslocar a combinacao dos resutaldos um numero de vezes determinado pelo R-Adder. O qual recebe como entrada o dividendo de cada DividerUnity. Ou seja, ele retorna o numero da DividerUnity em que operacao acabou. Depois de deslocado, o resultado recebe de volta seu sinal, mas soh eh ecaminhado para a saida se nao ocorreu overflow. 
+	Na mesma DividerUnity apontada pelo R-Adder, eh selecionado o dividendo que ela retorna. Esse dividendo eh o resto da divisao.
+	Se ocorrer overflow, eh retornado 1 no verificador de overflow. O overflow acontece quando se tenta dividir -128 por -1. Ou quando se tenta dividor por zero.
