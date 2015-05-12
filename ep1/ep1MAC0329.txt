@@ -10,4 +10,64 @@ Nomes:				nUSP:
 
 
 
+-Modulos:
 
+	-HalfAdder:
+
+		Calcula a soma de dois bits sem considerar algum carry anterior. E devolve o resultado
+	da soma e o carry.
+
+	-FullAdder:
+
+		Calcula a soma de dois bits considerando o carry anterior. E devolve o resultado da 
+	soma e o carry.
+	
+	-8bitAdder:
+
+		Calcula a soma de dois numeros inteiros de 8 bits no formato de complemento de dois,
+	usando 7 FullAdders e 1 HalfAdder em serie.
+	Se a soma exceder 8 bits, ele indica que ocorreu overflow. Devolve o resultado da soma.
+
+	-8Adder:
+	
+		Aglutina as entradas e a saida do modulo 8bitAdder em um soh pino de 8bits, cada.
+
+	-complemento2:
+	
+		Recebe um inteiro de 8bits e devolve seu complemento de dois.
+
+	-8Subtracter:
+	
+		Calcula a substracao de dois numeros inteiros de 8bits no formato de complemento de
+	 dois, usando o modulo complemento2 para calcular o complemento do subtraendo, e depois os
+	 soma com um 8Adder. Indica overflow, se ocorreu. E devolve o resultado da subtracao.
+
+	 -8bitMultiplier:
+
+		Calcula a multiplicacao entre dois numeros inteiros de 8bits no formato de
+	complemento de dois, 
+
+	-8Multiplier:
+	
+		Aglutina as entradas e a saida do modulo 8bitMultiplier em um soh pino de 8bits cada. 
+
+	-Greather:
+
+		Recebe dois numeros inteiros de 8bits positivos e subtrai o segundo do primeiro, e retorna o bit mais significante. Ou seja, verifica se o primeiro numero eh maior que o segundo.
+
+	-R-Adder:
+
+		Recebe 8 entradas de 1 bit cada, e retorna o numero de 1's.
+
+	-R-Shifter:
+
+		Recebe um numero inteiro de 8 bits positivo e o desloca pra esquerda ateh que o bit mais significante seja 1.
+
+	-DividerUnity:
+
+		Recebe tres numeros inteiros positivos de 8 bits e um numero positivo de um bit, o divisor original, o dividendo atual, o divisor deslocado e o verificador de parada. O divisor deslocado eh subtraido do dividendo atual, se o resultado for positivo retorna-se 1, ou 0 caso contrario. Tambem sera retornado na saida o novo dividendo, que sera igual ao dividendo atual se o resultado foi zero, senao, ele sera o resultado da subtracao. Ao mesmo tempo, eh verificado se o divisor original eh maior do que o divisor deslocado, se sim o proximo indicador de parada sera 1, senao, sera 0. Caso o atual verificador de parada estiver entrando com 1, automaticamente o proximo verificador de parada sera 1, e o resultado sera 0 independentemente da subtracao.
+
+	-Divider:
+
+		Recebe dois numeros inteiros de 8 bits no formato de complemento de 2
+		
