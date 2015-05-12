@@ -1,0 +1,13 @@
+EP1 de MAC0329 - IMplementaçao de uma ALU no Logisim
+
+Nomes:				nUSP:
+
+	-Felipe Silva Felix;		-8941092;
+	-Larissa de Oliveira Penteado;	-8941338;
+	-Lucas de Carvalho Dias;	-8941241;
+	-Thais Lima Sousa. 		-8941220.
+
+
+
+
+
