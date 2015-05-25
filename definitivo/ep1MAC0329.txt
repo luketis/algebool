@@ -85,3 +85,5 @@ Nomes:				nUSP:
 	        Na mesma DividerUnity apontada pelo R-Adder, é selecionado o dividendo que ela retorna. Esse dividendo é o resto da divisão.
 	        Se ocorrer overflow, é retornado 1 no verificador de overflow. O overflow acontece quando se tenta dividir -128 por -1.
                 Ou quando se tenta dividor por zero.
+
+	OBS: As vezes, o Logisim buga para algum circuitos auxiliares. Porem quando nao buga, tudo funciona (de acordo com nossos testes).
