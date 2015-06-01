@@ -5237,6 +5237,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(390,250)" to="(420,250)"/>
     <wire from="(910,580)" to="(920,580)"/>
     <wire from="(500,590)" to="(620,590)"/>
+    <comp lib="6" loc="(1056,334)" name="Text">
+      <a name="text" val="esse flip-flop impede que ele faça isso no primeiro pulso."/>
+      <a name="font" val="SansSerif bold 16"/>
+    </comp>
     <comp lib="0" loc="(930,760)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -5245,6 +5249,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="0" loc="(320,310)" name="Clock">
       <a name="facing" val="north"/>
+    </comp>
+    <comp lib="6" loc="(900,217)" name="Text">
+      <a name="text" val="a instrucao STP desliga a CPU"/>
+      <a name="font" val="SansSerif bold 12"/>
     </comp>
     <comp lib="1" loc="(520,340)" name="Controlled Buffer">
       <a name="facing" val="south"/>
@@ -5265,10 +5273,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="6" loc="(808,572)" name="Text">
       <a name="text" val="START"/>
       <a name="font" val="SansSerif bold 16"/>
-    </comp>
-    <comp lib="6" loc="(1064,235)" name="Text">
-      <a name="text" val="a instrucao STP iria desativar o enanbles dos componentes"/>
-      <a name="font" val="SansSerif bold 12"/>
     </comp>
     <comp lib="4" loc="(910,580)" name="J-K Flip-Flop"/>
     <comp lib="0" loc="(930,360)" name="Tunnel">
@@ -5307,11 +5311,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="16"/>
       <a name="trigger" val="high"/>
     </comp>
-    <comp lib="6" loc="(1099,317)" name="Text">
-      <a name="text" val="esse flip-flop impede que ele faça isso no primeiro pulso do clock."/>
+    <comp lib="4" loc="(920,360)" name="J-K Flip-Flop"/>
+    <comp lib="6" loc="(1047,313)" name="Text">
+      <a name="text" val="Como o PC se auto-incrementa quando recebe o clock,"/>
       <a name="font" val="SansSerif bold 16"/>
     </comp>
-    <comp lib="4" loc="(920,360)" name="J-K Flip-Flop"/>
+    <comp lib="6" loc="(878,726)" name="Text">
+      <a name="text" val="Valores:"/>
+      <a name="font" val="SansSerif bold 16"/>
+    </comp>
     <comp lib="0" loc="(910,810)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="16"/>
@@ -5453,10 +5461,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="1" loc="(120,400)" name="NOT Gate">
       <a name="facing" val="west"/>
       <a name="size" val="20"/>
-    </comp>
-    <comp lib="6" loc="(1041,295)" name="Text">
-      <a name="text" val="Como o PC e auto-incrementa quando recebeo clock,"/>
-      <a name="font" val="SansSerif bold 16"/>
     </comp>
     <comp lib="0" loc="(570,390)" name="Tunnel">
       <a name="label" val="clear"/>
