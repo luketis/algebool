@@ -1,0 +1,73 @@
+
+	Módulos:
+	
+PC:
+    Circuito que define o endereço da próxima instrução
+    Toda vez que o clock está baixo ele se auto-incrementa
+    (a não ser que sua saida tenha sido setada durante o clock alto
+    É composto de duas partes:
+        -Contador:
+            Com um flip flop JK para cada bit do numero.
+            Como é um contador, seu valor deve permanecer ou
+            inverter. Então a entrada J é igual à entrada K.
+            Na incrementação de um número binário, o valor de 
+            cada bit inverte a cada n iterações, sendo n o expoente
+            da potência de 2 que esse bit representa no número.
+            Por isso, o primeiro flip flip tem as entradas JK
+            sempre 1, para que o valor inverta em toda iteração.
+            E as portas AND fazem com que os outros flip-flops
+            tenham comportamento respectivo.
+            Não é necessário pegar cada saída dos flip-flips
+            anteriores como entrada no AND do flip-flop atual.
+            Bastaria fazer AND da anterior com o resultado do AND
+            da ante-anterior. Mas por causa da latência, isso 
+            tornaria o circuito mais devagar.
+            
+       -Setador:
+            Faz o PC "pular" para o valor desejado.
+            É composto por 8 buffers e 8 buffers inversores,
+            para ligar o setter do flip-flop quando o bit de entrada
+            é 1, ou ligar o reset do flip-flop quando a entrada é 0.
+            
+            
+Ctrl:
+    Circuito responsável pela decodificação e pela execução das
+    instruções.
+    Usa um MUX para verificar a instrução (decodificar) e assim
+    ativar o buffer que permite a passagem dos comandos de execução.
+    Os comandos de execução estão guardados em constantes.
+    O clock controla outros buffers que só permitem a passagem dos
+    comandos de execução quando o clock estiver alto.
+    Os pull-resistors fazem com que quando o Ctrl não está mandando
+    os comandos de execução, ele mandar o comando NOP. Ou também 
+    manda o comando NOP quando nenhuma instrução é reconhecida.
+    Constantes: W_ctrl, RW, R_acc, R_ir, write_acc, set_pc, clear
+    Que significam:
+        -W_ctrl: Se quem vai dizer o proximo endereço para a RAM é 
+        o PC ou o Ctrl direto.
+        -RW: Se a RAM estará em modo Read ou Write ( 1 para Read ).
+        -R_acc: controla o buffer que manda o conteudo da RAM para
+        -ACC ( ativado quando ACC deve receber um valor ).
+        -R_ir: controla o buffer que manda o countedo da RAM para IR
+        ativado quando IR deve receber uma instrução ).
+        -write_acc: controla o buffer que manda o conteúdo de ACC
+        para RAM ( ativado se o conteúdo de ACC deve ser escrito 
+        na RAM ).
+        -set_pc: informa o circuito do PC se ele deve ter seu valor
+        mudado pelo controle ou não.
+        -clear: informa o flip-flop que cuida do desligamento da CPU
+        se ele deve desliga-lá ou não.
+    
+    
+CPU:
+    Circuito que simula o funcionamento da arquitetura.
+    Usa um bloco RAM, o Ctrl, o PC, o IR e o ACC.
+    Tem também um flip-flop JK que inpede que o PC se incremente
+    antes do programa começar a rodar e outro Flip-Flop que liga
+    e desliga a CPU.
+    O bloco Ctrl basicamente manda os comandos de abertura ou
+    fechamento para os buffers que controlam os barramentos de
+    dados, endereço e instrução.
+    
+    
+OBS: alguns clocks estão invertidos para aproveitar tempo.
